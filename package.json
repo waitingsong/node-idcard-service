@@ -1,0 +1,64 @@
+{
+  "name": "idcard-service",
+  "version": "1.0.0",
+  "description": "通过二代身份证机具读取二代身份证信息web服务",
+  "dependencies": {
+    "egg": "^1.7.0",
+    "egg-scripts": "^1.0.0",
+    "idcard-reader": "^1.2.3",
+    "moment": "^2.18.1",
+    "source-map-support": "^0.4.16",
+    "tslib": "^1.7.1",
+    "typescript": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.1",
+    "@types/egg": "^1.0.2",
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^8.0.25",
+    "@types/supertest": "^2.0.3",
+    "autod": "^2.9.0",
+    "autod-egg": "^1.0.0",
+    "cheerio": "^1.0.0-rc.2",
+    "egg-bin": "^4.1.0",
+    "egg-ci": "^1.8.0",
+    "egg-mock": "^3.9.0",
+    "eslint": "^4.3.0",
+    "eslint-config-egg": "^4.2.0",
+    "intelli-espower-loader": "^1.0.1",
+    "rimraf": "^2.6.1",
+    "sinon": "^3.2.1",
+    "supertest": "^3.0.0",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.7.0",
+    "tslint-eslint-rules": "^4.1.1"
+  },
+  "engines": {
+    "node": ">=7.6.0"
+  },
+  "scripts": {
+    "clean": "rimraf app/**/*.{js,map} test/**/*.{js,map} config/**/*.{js,map}",
+    "tsc": "tsc -p tsconfig.json",
+    "tsc:w": "tsc -p tsconfig.json -w",
+    "debug": "egg-bin debug",
+    "start": "egg-bin dev",
+    "test": "npm run tsc && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint ./app",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "ci": {
+    "version": "6, 8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/waitingsong/node-idcard-service.git"
+  },
+  "bugs": {
+    "url": "https://github.com/waitingsong/node-idcard-service/issues"
+  },
+  "author": "waiting",
+  "license": "MIT"
+}

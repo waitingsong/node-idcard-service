@@ -1,0 +1,155 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true,
+    "jquery": true,
+    "worker": true,
+    "node": true,
+    "amd": true,
+    "commonjs": true,
+    "mocha": true,
+    "serviceworker": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 8
+  },
+  "extends": "eslint:recommended",
+  "globals": {
+    "ST": true, "DT": true,
+    "App": true, "setLocalStorage": true, "getLocalStorage": true, "my_ajax": true, 
+    "my_alert": true, "log": true, "alert": true, "toastr": true, 
+    "InitBankAcc": true, "isArray": true,
+    "setSessionStorage": true, "getSessionStorage": true,
+    "rmSessionStorage": true, "formatter_currency": true, "JsRmbToUpper": true, "UItoastr": true, "console":true, 
+    "tab_init_stage_10": true, "tab_init_stage_15": true, "tab_init_stage_20": true, "tab_init_stage_30":true, "moment":true,
+    "comm_reset_form": true,
+    "comm_get_conf": true, "comm_init_import_archive": true, "comm_set_select_item": true, "comm_get_select_selected_data": true,
+    "get_user_right_btn": true,
+    "fill_edit_form": true, "getNowFormatDate": true, "comm_get_list": true, "comm_gen_import_headers": true, "xls_read_wb_form_file": true,
+    "getAgeFromIdcard": true, "getsexFromIdcard": true, "comm_get_bankcard_number_start": true, "checkMobile": true,
+    "comm_auto_set_date": true, "checkIDCard": true, "close_tab": true, "comm_load_bank_login_verify": true,
+    "comm_set_radio_checked": true, "comm_load_loandetial": true, "comm_load_tran_checkflow": true,
+    "comm_load_find_subject": true, "comm_load_find_etps": true, "comm_load_find_cadept": true, "comm_load_find_fund": true,
+    "comm_get_tb_height": true, "comm_clean_elms": true, "comm_get_data": true, "jqg_formatter_date_ymd": true, "comm_set_async_select_wu": true,
+    "comm_fill_async_select2": true, "sha3_256": true, "comm_update_arccode": true, "jqg_formatter_msToDate": true,
+    "createCookie": true, "getCookie": true, "sheet_from_array_of_arrays": true, "Workbook": true, "saveAs": true, "XLSX": true,
+    "s2ab": true, "s2u8arr": true,"showcommondialog": true, "comm_get_dict": true, "get_age_from_birthday": true,
+    "comm_fill_select": true, "compare_date": true, "comm_get_script_controller": true, "xlsx_get_sheet_names": true,
+    "jqg_formatter_yesno": true, "jqg_unformatter_yesno": true,
+    "jqg_formatter_gender": true, "comm_set_checkbox_checked": true, "jqg_formatter_marrital_status": true,
+    "getCurrentScript": true, "parseJSON": true, "comm_compare_date": true, "formatter_NumberFormat": true,
+    "strTreeData": true, "comm_get_script_fn_init": true,
+    "Module": true, "Menu": true, "List": true, "Init": true, "getBaseURL": true, "load_js": true, "Fill": true, "Valid": true, "Url": true, "Grid": true,
+    "DM": true, 
+    "comm_get_script_mid": true, "comm_get_script_dataset": true,
+    "get_url_controller": true, "delChild": true, "comm_pageinit": true, "comm_cache_get": true, "comm_cache_set": true,
+    "comm_fetch_dict_by_id": true, "comm_get_checkbox_values": true,
+    "comm_get_select_datas_by_type": true, "comm_get_elm_stable_width": true,
+    "allowed_filetypes": true, "comm_formate_je_pz": true, "comm_load_warrent_view": true, "comm_get_radio_value": true,
+    "format_thousandsSeparator": true, "formatJe": true, "YH_getUserBankRangRight": true, "YH_getUserBankByRange": true,
+    "createNewEvent": true, "throttle": true, "ValidIdcardII": true, "generateUID": true
+  },
+  "rules": {
+    "linebreak-style": [ 2, "unix" ],
+    "semi": [ 2, "always" ],
+    "quotes": [ 2, "single" ],
+
+    //"no-unused-vars": ["warn", { "vars": "local", "args": "none" }],	// 禁止未使用过的变量
+    "no-unused-vars": 0,
+    "no-mixed-spaces-and-tabs": [2],
+    "no-use-before-define": [2,  {"functions": false, "classes": true }],  // 禁止在变量定义之前使用它们
+
+    "dot-notation": 1,	// 强制尽可能地使用点号
+
+    "no-floating-decimal": 1,	// 禁止数字字面量中使用前导和末尾小数点
+    "comma-dangle": [1, "always-multiline"],	// 当最后一个元素或属性与闭括号 ] 或 右大括号 在 不同的行时，要求使用拖尾逗号；当在 同一行时，禁止使用拖尾逗号
+
+    "brace-style": [1, "stroustrup", { "allowSingleLine": true }],	// 大括号风格要求 
+    "curly": 2,	// 要求遵循大括号约定 
+    "object-curly-spacing": [1, "never", { "objectsInObjects": true }],	// 强制在大括号中使用一致的空格
+
+    "comma-spacing": [1, { "before": false, "after": true }],	// 强制在逗号周围使用空格 禁止逗号前出现空格,强制逗号后空格
+    "no-multi-spaces": 1,	// 禁止出现多个空格
+
+    "space-before-function-paren": [1, "never"],	// 禁止函数圆括号之前有一个空格
+
+    "space-infix-ops": [2, {"int32Hint": true}],	// 要求中缀操作符周围有空格
+
+    "no-whitespace-before-property": [1],	// 禁止属性前有空白
+
+    "array-bracket-spacing": [1, "never", {"objectsInArrays": true, "arraysInArrays": true} ],	// 设置在括号内使用空格风格
+
+    "no-unsafe-negation": 1,	// disallow negating the left operand of relational operators 
+    "yoda": 2,	// 禁止Yoda条件
+
+    "func-call-spacing": [1, "never"],	// disallow spacing between function identifiers and their invocations
+
+    "space-before-blocks": [1, "always"],	// 强制在块之前使用一致的空格
+    "key-spacing": [1, {"beforeColon": false, "afterColon": true, "mode": "minimum", "align": "value" }],	// 强制在对象字面量的键和值之间使用一致的空格 
+    "keyword-spacing": [1, {"before": true, "after": true}],	// 强制在对象字面量的键和值之间使用一致的空格 
+    "arrow-spacing": [1, { "before": true, "after": true }],	// 要求箭头函数的箭头之前或之后有空格
+    "block-spacing": [1, "always"],	// 强制在单行代码块中使用一致的空格
+
+    "space-unary-ops": [
+      1, {
+        "words": true,
+        "nonwords": false,
+        "overrides": {
+          "!": true,
+          "!!": true
+        }
+      }
+    ],
+
+    "newline-after-var": [1, "always"],	// 要求变量声明语句后有一行空行 
+    "no-multiple-empty-lines": [1, { "max": 4, "maxEOF": 1 }],	// 多个空行控制
+
+    "no-trailing-spaces": 1,	// 禁用行尾空白 
+    "indent": [1, 4, {"SwitchCase": 1,  "VariableDeclarator": { "var": 1, "let": 1, "const": 1}, "outerIIFEBody": 1 }],	// 强制使用一致的缩进
+    "eol-last": [1, "always"],
+    "unicode-bom": [2, "never"],    // 禁止使用 Unicode 字节顺序标记 (BOM)
+
+    "eqeqeq": [1,  "smart"],
+    "guard-for-in": 2,
+    "no-eval": 2,
+    "no-implied-eval": 2,	// 禁止使用类似 eval() 的方法
+    "no-eq-null": 2,	// 禁止在没有类型检查操作符的情况下与 null 进行比较
+    "no-with": 2,
+    "no-new-wrappers": 2,	// 禁止对 String，Number 和 Boolean 使用 new 操作符
+    "no-useless-escape": 2,	// 禁用不必要的转义字符
+    "no-new-object": 2,	// 禁止使用 Object 构造函数 new Object, 使用{}替代
+    "prefer-numeric-literals": 2,	// parseInt只处理十进制
+    "wrap-regex": 2,	// 要求正则表达式被括号包裹起来
+    "no-undef-init": 2,	// 不允许初始化变量值为 undefined
+    "wrap-iife": [1, "any"],	// 需要把立即执行的函数包裹起来
+    "no-delete-var": 2,	// 禁止删除变量
+    "no-label-var": 2,	// 禁用与变量同名的标签
+    "no-empty": 1,  // 禁止空块语句
+    "no-var": 2,  // 要求使用 let 或 const 而不是 var
+
+    "no-irregular-whitespace": 2, // 禁止不规则的空白
+    "valid-typeof": 2,  // 强制 typeof 表达式与有效的字符串进行比较 
+    "spaced-comment": [1, "always", {"exceptions": ["-", "+"]}],  // 强制在注释中 // 或 /* 使用一致的空格 
+    "use-isnan": 2, // 要求使用 isNaN() 检查 NaN
+
+    "no-caller": 2,
+    "no-extra-bind": 1,
+    "no-loop-func": 1,
+    "no-new-func": 2,
+    "no-octal-escape": 2,
+    "no-return-assign": 2,
+    "no-return-await": 2,
+    "no-self-compare": 2,
+    "no-sequences": 2,
+    "no-throw-literal": 2,
+    "no-unmodified-loop-condition": 2,
+    "no-array-constructor": 2,
+    "no-tabs": 0,
+    "no-confusing-arrow": 2,
+    "no-duplicate-imports": 2,
+    "no-useless-computed-key": 2,
+    "no-useless-constructor": 2,
+    "no-useless-rename": 2,
+    "no-console": 0
+  }
+}
