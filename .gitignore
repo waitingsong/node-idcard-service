@@ -10,7 +10,7 @@ logs
 *.min.map
 Thumbs.db
 *.~pck
-node_modules/
+node_modules
 node_modules*/
 npm-debug.log
 coverage/
@@ -77,3 +77,5 @@ Ankh.NoLoad
 
 !.gitkeep
 
+/app
+/config
