@@ -1,22 +1,32 @@
-import { Controller } from 'egg';
+import {Controller} from 'egg';
+import * as path from 'path';
 
 export default class IdcController extends Controller {
     public async read() {
-        const { ctx, app } = this;
+        const {ctx, app} = this;
         const resp: any = {
             err: 0,
+            dat: {
+                idData: '',
+                imgUrl: '',
+            },
         };
         const data = await ctx.service.idc.getData(app.config.idc);
 
         if (data) {
-            resp.dat = data;
-        }
-        else {
-            resp.dat = null;
+            const key = path.basename(data.imagePath);
+
+            app.idinfoMap.set(key, data);
+            resp.dat.idData = data;
+
+            if (data.imagePath) {
+                resp.dat.imgUrl = await ctx.service.img.composite(data); // dataURL
+                app.idinfoMap.delete(key);
+            }
         }
 
         ctx.body = resp;
-        ctx.status = 202;
+        ctx.status = 201;
     }
 }
 
