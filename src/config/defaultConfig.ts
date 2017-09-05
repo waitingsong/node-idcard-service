@@ -1,16 +1,44 @@
-export class DefaultConfig {
+export interface IDefaultConfig {
+    idc: {
+        dllTxt: string;
+        dllImage: string;
+    };
+    img: {
+        width: number;
+        height: number;
+        avatarWidth: number;
+        avatarHeight: number;
+        avatarOffsetX: number;
+        avatarOffsetY: number;
+        baseImage: string;
+        minTransparentValue: number[];   // R,G,B
+        maxTransparentValue: number[];
+    };
+}
+
+
+export class DefaultConfig implements IDefaultConfig {
     idc = {
         dllTxt: 'c:/sdtapi.dll',
         dllImage: 'c:/wltrs.dll',
     };
     img = {
+        width: 344,
+        height: 435,
+        avatarWidth: 102,
+        avatarHeight: 126,
+        avatarOffsetX: 213,
+        avatarOffsetY: 38,
+        baseImage: 'images/idcard-tpl.png',
+        minTransparentValue: [254, 254, 254],   // R,G,B
+        maxTransparentValue: [255, 255, 255],
     };
-};
+}
 
 export default new DefaultConfig();
 
 declare module 'egg' {
     export interface Application {
-        config: EggAppConfig & DefaultConfig;
+        config: EggAppConfig & IDefaultConfig;
     }
 }
