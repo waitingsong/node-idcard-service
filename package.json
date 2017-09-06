@@ -39,16 +39,18 @@
     "node": ">=7.6.0"
   },
   "scripts": {
+    "build": "npm run clean && npm run tsc",
     "clean": "rimraf app/*.{js,map} app/controller app/extend app/service test config",
     "tsc": "tsc -p src/tsconfig.json && tsc -p src/tsconfig.client.json",
     "tsc:ws": "tsc -p src/tsconfig.json -w",
     "tsc:wc": "tsc -p src/tsconfig.client.json -w",
     "debug": "egg-bin debug",
-    "start": "egg-bin dev",
+    "start": "egg-scripts start --daemon",
+    "dev": "egg-bin dev",
     "test": "npm run tsc && npm run test-local",
     "test-local": "egg-bin test",
     "cov": "egg-bin cov",
-    "lint": "eslint ./app",
+    "lint": "eslint --fix ./app",
     "ci": "npm run lint && npm run cov",
     "autod": "autod"
   },
