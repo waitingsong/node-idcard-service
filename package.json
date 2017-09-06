@@ -39,7 +39,7 @@
     "node": ">=7.6.0"
   },
   "scripts": {
-    "build": "npm run clean && npm run tsc",
+    "build": "npm run clean && npm run tsc && npm run lint",
     "clean": "rimraf app/*.{js,map} app/controller app/extend app/service test config",
     "tsc": "tsc -p src/tsconfig.json && tsc -p src/tsconfig.client.json",
     "tsc:ws": "tsc -p src/tsconfig.json -w",
