@@ -1,6 +1,7 @@
 import {Controller} from 'egg';
 import * as path from 'path';
 
+
 export default class IdcController extends Controller {
     public async read() {
         const {ctx, app} = this;
