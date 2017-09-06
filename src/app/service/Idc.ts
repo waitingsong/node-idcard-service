@@ -20,9 +20,6 @@ export class Idc extends Service {
             if (devices.length) {
                 return devices;
             }
-            else {
-                return;
-            }
         })
             .then((devices): Promise<idcr.Config.IDData | void> => {
                 return idcr.fetch_data(devices[0]).then(data => {
