@@ -43,6 +43,21 @@ aimg.onerror = () => {
     document.body.appendChild(input);
 };
 
+bimg.onload = () => {
+    const file = location.hash;
+
+    if (file && file.length > 1) {
+        aimg.src = '/read_img/' + file.slice(1);
+    }
+    else {
+        console.log('run() location.hash blank');
+    }
+};
+bimg.onerror = () => {
+    console.log('bimg load error');
+    document.body.appendChild(gen_input());
+};
+
 function merge_avatar(cvs, avatarImage, settings) {
     const ctx = cvs.getContext('2d');
 
@@ -130,20 +145,6 @@ function process_avatar(aimg, settings) {
     return cvs;
 }
 
-bimg.onload = () => {
-    const file = location.hash;
-
-    if (file && file.length > 1) {
-        aimg.src = '/read_img/' + file.slice(1);
-    }
-    else {
-        console.log('run() location.hash blank');
-    }
-};
-bimg.onerror = () => {
-    console.log('bimg load error');
-    document.body.appendChild(gen_input());
-};
 
 function gen_input(): HTMLInputElement {
     const input = <HTMLInputElement> document.createElement('input');
