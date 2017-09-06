@@ -52,6 +52,7 @@
     "cov": "egg-bin cov",
     "lint": "eslint --fix ./app",
     "ci": "npm run lint && npm run cov",
+    "build:clean": "rimraf node_modules/**/*.md node_modules/**/.npmignore node_modules/**/.npminstall.done",
     "autod": "autod"
   },
   "ci": {
