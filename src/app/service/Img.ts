@@ -28,11 +28,12 @@ export class Img extends Service {
         const file = row.imagePath;
         const name = path.basename(file);
         const dir = path.dirname(file);
-        const processSettings = encodeURIComponent(JSON.stringify(this.getConfig()));
+        const processSettings = this.getConfig();
+        const sts = encodeURIComponent(JSON.stringify(processSettings));
 
         const browser = await puppeteer.launch({headless: false});
         const page = await browser.newPage();
-        await page.goto(`http://${header.host}/public/img.html?st=${processSettings}#` + encodeURIComponent(name));
+        await page.goto(`http://${header.host}/public/img.html?st=${sts}#` + encodeURIComponent(name));
 
         return page.waitForSelector('#rinput')
             .then(() => {
@@ -57,12 +58,12 @@ export class Img extends Service {
                 else {
                     ctx.logger.error('composite result url length 0');
                 }
-                browser.close();
+                processSettings.debug || browser.close();
                 return durl ? durl : '';
             })
             .catch(err => {
                 ctx.logger.error(err);
-                browser.close();
+                processSettings.debug || browser.close();
                 return '';
             });
     }

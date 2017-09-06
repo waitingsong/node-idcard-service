@@ -13,9 +13,9 @@ export interface IDefaultConfig {
         baseImage: string;
         minTransparentValue: number[];   // R,G,B
         maxTransparentValue: number[];
+        debug: boolean;
     };
 }
-
 
 export class DefaultConfig implements IDefaultConfig {
     idc = {
@@ -32,6 +32,7 @@ export class DefaultConfig implements IDefaultConfig {
         baseImage: 'images/idcard-tpl.png',
         minTransparentValue: [254, 254, 254],   // R,G,B
         maxTransparentValue: [255, 255, 255],
+        boolean: false,     // true不关闭浏览器且显示合成图片效果
     };
 }
 
