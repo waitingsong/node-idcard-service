@@ -17,15 +17,15 @@ const bimg = <HTMLImageElement> document.createElement('img');
 
 
 aimg.onload = () => {
+    console.log('aimg load:', aimg);
     const cvs = create_base_canvas(bimg, settings.width, settings.height);
     const cvs2 = process_avatar(aimg, settings);
 
     merge_avatar(cvs, cvs2, settings);
 
     const durl = cvs.toDataURL('image/png');
-    const input = <HTMLInputElement> document.createElement('input');
+    const input = gen_input();
 
-    input.id = 'rinput';
     input.value = durl;
     document.body.appendChild(input);
 
@@ -35,6 +35,12 @@ aimg.onload = () => {
         merged.src = durl;
         document.body.appendChild(merged);
     }
+};
+aimg.onerror = () => {
+    console.log('aimg load error');
+    const input = gen_input();
+
+    document.body.appendChild(input);
 };
 
 function merge_avatar(cvs, avatarImage, settings) {
@@ -134,6 +140,18 @@ bimg.onload = () => {
         console.log('run() location.hash blank');
     }
 };
+bimg.onerror = () => {
+    console.log('bimg load error');
+    document.body.appendChild(gen_input());
+};
+
+function gen_input(): HTMLInputElement {
+    const input = <HTMLInputElement> document.createElement('input');
+
+    input.id = 'rinput';
+    input.value = '';
+    return input;
+}
 
 export function run() {
     const arr = location.search;
