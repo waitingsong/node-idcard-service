@@ -1,3 +1,16 @@
+app/controller
+app/extend
+app/service
+app/**/*.js
+app/**/*.d.ts
+test/**/*.js
+test/**/*.d.ts
+*.map
+run
+
+/config
+/*.js
+
 *.swp
 *.bak
 *.[oa]
@@ -11,11 +24,10 @@ logs
 Thumbs.db
 *.~pck
 node_modules
-node_modules*/
+node_modules*
 npm-debug.log
-coverage/
-.idea/
-run/
+coverage
+.idea
 
 
 # files for the dex VM
@@ -77,6 +89,3 @@ Ankh.NoLoad
 
 !.gitkeep
 
-/app
-/config
-/*.js
