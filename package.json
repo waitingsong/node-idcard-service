@@ -40,9 +40,8 @@
   },
   "scripts": {
     "clean": "rimraf app/**/*.{js,map} test/**/*.{js,map} config/**/*.{js,map}",
-    "tsc": "tsc -p tsconfig.json && tsc -p tsconfig.client.json",
-    "tsc:ws": "tsc -p tsconfig.json -w",
-    "tsc:wc": "tsc -p tsconfig.client.json -w",
+    "tsc:ws": "tsc -p src/tsconfig.json -w",
+    "tsc:wc": "tsc -p src/tsconfig.client.json -w",
     "debug": "egg-bin debug",
     "start": "egg-bin dev",
     "test": "npm run tsc && npm run test-local",
