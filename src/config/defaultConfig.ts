@@ -42,4 +42,11 @@ declare module 'egg' {
     export interface Application {
         config: EggAppConfig & IDefaultConfig;
     }
+
+    export interface AjaxResp {
+        err: number;
+        dat?: null | any;
+        msg?: string | null;
+    }
+
 }
