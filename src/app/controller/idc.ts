@@ -3,7 +3,7 @@ import * as path from 'path';
 
 
 export default class IdcController extends Controller {
-    public async read() {
+    public async read(): Promise<void> {
         const {ctx, app} = this;
         const resp: AjaxResp = {
             err: 0,
