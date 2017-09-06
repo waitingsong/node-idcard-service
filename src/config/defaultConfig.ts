@@ -29,7 +29,7 @@ export class DefaultConfig implements IDefaultConfig {
         avatarHeight: 126,
         avatarOffsetX: 213,
         avatarOffsetY: 38,
-        baseImage: 'images/idcard-tpl.png',
+        baseImage: 'image/idcard-tpl.png',
         minTransparentValue: [254, 254, 254],   // R,G,B
         maxTransparentValue: [255, 255, 255],
         debug: false,     // true不关闭浏览器且显示合成图片效果
