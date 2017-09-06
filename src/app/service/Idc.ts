@@ -6,13 +6,9 @@ import * as idcr from 'idcard-reader';
  * Idc Api Service
  */
 export class Idc extends Service {
-    constructor(ctx: Context) {
-        super(ctx);
-    }
     getConfig() {
         return this.app.config.idc;
     }
-
 
     public getData(settings: idcr.Config.Init): Promise<idcr.Config.IDData | void> {
         return idcr.init(settings).then((inited): idcr.Config.Device[] | void => {

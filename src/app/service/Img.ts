@@ -9,9 +9,6 @@ import * as path from 'path';
  * Img Api Service
  */
 export class Img extends Service {
-    constructor(ctx: Context) {
-        super(ctx);
-    }
     getConfig() {
         return this.app.config.img;
     }
