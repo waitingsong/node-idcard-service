@@ -1,4 +1,4 @@
-import { Context, Service } from 'egg';
+import {Context, Service} from 'egg';
 import * as idcr from 'idcard-reader';
 
 
@@ -28,10 +28,10 @@ export class Idc extends Service {
                 return idcr.fetch_data(devices[0]).then(data => {
                     console.log(data);
                     return data;
-                })
-                .catch(() => {
-                    return;
                 });
+            })
+            .catch(() => {
+                return;
             });
     }
 
