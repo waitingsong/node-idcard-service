@@ -20,6 +20,7 @@ export default class ImgController extends Controller {
 
         if ( ! data) {
             ctx.status = 404;
+            ctx.logger.error('/read_img file not exists:' + filename);
             return;
         }
         ctx.logger.info('read_image() data', data.imagePath);
