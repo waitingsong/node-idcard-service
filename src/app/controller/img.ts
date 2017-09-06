@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 export default class ImgController extends Controller {
-    public async read() {
+    public read(): void {
         const {ctx, app} = this;
         let filename: string;
 
