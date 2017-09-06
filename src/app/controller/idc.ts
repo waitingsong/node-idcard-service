@@ -14,12 +14,12 @@ export default class IdcController extends Controller {
         const data = await ctx.service.idc.getData(app.config.idc);
 
         if (data) {
-            const key = path.basename(data.imagePath);
-
-            app.idinfoMap.set(key, data);
             resp.dat.idData = data;
 
-            if (data.imagePath) {
+            if (app.config.idc.dllImage && data.imagePath) {
+                const key = path.basename(data.imagePath);
+
+                app.idinfoMap.set(key, data);
                 resp.dat.imgUrl = await ctx.service.img.composite(data); // dataURL
                 app.idinfoMap.delete(key);
             }
