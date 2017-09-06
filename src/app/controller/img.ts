@@ -19,8 +19,7 @@ export default class ImgController extends Controller {
         const data = app.idinfoMap.get(filename);
 
         if ( ! data) {
-            ctx.status = 200;
-            ctx.body = '';
+            ctx.status = 404;
             return;
         }
         ctx.logger.info('read_image() data', data.imagePath);
