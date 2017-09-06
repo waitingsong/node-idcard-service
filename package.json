@@ -39,7 +39,7 @@
     "node": ">=7.6.0"
   },
   "scripts": {
-    "clean": "rimraf app/**/*.{js,map} test/**/*.{js,map} config/**/*.{js,map}",
+    "clean": "rimraf app/*.{js,map} app/controller app/extend app/service test/**/* config",
     "tsc:ws": "tsc -p src/tsconfig.json -w",
     "tsc:wc": "tsc -p src/tsconfig.client.json -w",
     "debug": "egg-bin debug",
