@@ -40,6 +40,7 @@
   },
   "scripts": {
     "clean": "rimraf app/*.{js,map} app/controller app/extend app/service test/**/* config",
+    "tsc": "tsc -p src/tsconfig.json && tsc -p src/tsconfig.client.json",
     "tsc:ws": "tsc -p src/tsconfig.json -w",
     "tsc:wc": "tsc -p src/tsconfig.client.json -w",
     "debug": "egg-bin debug",
