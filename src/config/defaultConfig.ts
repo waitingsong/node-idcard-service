@@ -32,7 +32,7 @@ export class DefaultConfig implements IDefaultConfig {
         baseImage: 'images/idcard-tpl.png',
         minTransparentValue: [254, 254, 254],   // R,G,B
         maxTransparentValue: [255, 255, 255],
-        boolean: false,     // true不关闭浏览器且显示合成图片效果
+        debug: false,     // true不关闭浏览器且显示合成图片效果
     };
 }
 
