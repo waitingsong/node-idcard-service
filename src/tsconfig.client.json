@@ -4,6 +4,8 @@
     "target": "ES2017",                          /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'. */
     "module": "amd",                     /* Specify module code generation: 'commonjs', 'amd', 'system', 'umd' or 'es2015'. */
     "types": ["requirejs"],                           /* Type declaration files to be included in compilation. */
+    "sourceMap": true,                     /* Generates corresponding '.map' file. */
+    "inlineSourceMap": false,               /* Emit a single file with source maps instead of having a separate file. */
     "pretty": true
   },
   "include": [
