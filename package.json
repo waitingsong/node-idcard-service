@@ -10,7 +10,7 @@
     "puppeteer": "^0.10.2",
     "source-map-support": "^0.4.16",
     "tslib": "^1.7.1",
-    "typescript": "^2.4.2"
+    "typescript": "^2.5.2"
   },
   "devDependencies": {
     "@types/cheerio": "^0.22.1",
