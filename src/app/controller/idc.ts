@@ -26,8 +26,8 @@ export default class IdcController extends Controller {
             }
         }
 
-        ctx.body = resp;
         ctx.status = 201;
+        ctx.body = resp;
     }
 }
 
