@@ -31,7 +31,7 @@ export class Img extends Service {
         const processSettings = this.getConfig();
         const sts = encodeURIComponent(JSON.stringify(processSettings));
 
-        const browser = await puppeteer.launch({headless: false});
+        const browser = await puppeteer.launch({headless: ! processSettings.debug});
         const page = await browser.newPage();
         await page.goto(`http://${header.host}/public/img.html?st=${sts}#` + encodeURIComponent(name));
 
@@ -67,7 +67,6 @@ export class Img extends Service {
                 return '';
             });
     }
-
 
 }
 
