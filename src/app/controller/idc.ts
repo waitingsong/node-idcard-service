@@ -21,7 +21,12 @@ export default class IdcController extends Controller {
                 const key = path.basename(data.imagePath);
 
                 app.idinfoMap.set(key, data);
-                resp.dat.composite = await ctx.service.img.composite(data); // dataURL
+                try {
+                    resp.dat.composite = await ctx.service.img.composite(data); // dataURL
+                }
+                catch(ex) {
+                    ctx.logger.error(ex);
+                }
                 app.idinfoMap.delete(key);
             }
         }
