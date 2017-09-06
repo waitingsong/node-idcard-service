@@ -11,16 +11,17 @@ export class Idc extends Service {
     }
 
     public getData(settings: idcr.Config.Init): Promise<idcr.Config.IDData | void> {
-        return idcr.init(settings).then((inited): idcr.Config.Device[] | void => {
-            if (!inited) {
-                return;
-            }
-            const devices = idcr.find_device_list();
+        return idcr.init(settings)
+            .then((inited): idcr.Config.Device[] | void => {
+                if (!inited) {
+                    return;
+                }
+                const devices = idcr.find_device_list();
 
-            if (devices.length) {
-                return devices;
-            }
-        })
+                if (devices.length) {
+                    return devices;
+                }
+            })
             .then((devices): Promise<idcr.Config.IDData | void> => {
                 return idcr.fetch_data(devices[0]).then(data => {
                     console.log(data);
