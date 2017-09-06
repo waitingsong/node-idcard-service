@@ -38,9 +38,7 @@ aimg.onload = () => {
 };
 aimg.onerror = () => {
     console.log('aimg load error');
-    const input = gen_input();
-
-    document.body.appendChild(input);
+    document.body.appendChild(gen_input());
 };
 
 bimg.onload = () => {
