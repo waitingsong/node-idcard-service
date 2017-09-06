@@ -1,5 +1,4 @@
 import {Controller} from 'egg';
-import * as puppeteer from 'puppeteer';
 import * as fs from 'fs';
 import * as path from 'path';
 
